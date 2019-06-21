@@ -12,6 +12,7 @@
 \usepackage[]{fancyhdr}
 \usepackage[]{float}
 \usepackage[]{graphicx}
+\usepackage[]{tabularx}
 \usepackage[]{url}
 
 %---------------------------------------------------------------------------------------------------
@@ -67,6 +68,12 @@
 
 % Define \Hline which is bold \hline
 \newcommand{\Hline}{\noalign{\hrule height 1.5pt}}
+
+% for tabularx
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
 %---------------------------------------------------------------------------------------------------
 % Others                                                                                           |
