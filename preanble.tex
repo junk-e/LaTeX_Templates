@@ -12,6 +12,7 @@
 \usepackage[]{fancyhdr}
 \usepackage[]{float}
 \usepackage[]{graphicx}
+\usepackage[]{listings}
 \usepackage[]{tabularx}
 \usepackage[]{url}
 
@@ -49,7 +50,7 @@
 \addtolength{\textwidth}{-50truemm}         % textwidth - 50(Right+Left)
 
 %---------------------------------------------------------------------------------------------------
-% Figure, Table, Equation                                                                          |
+% Figure, Table, Equation, Listings                                                                |
 %---------------------------------------------------------------------------------------------------
 
 \makeatletter
@@ -64,6 +65,13 @@
   % Add chapter num. to equation num.
   \renewcommand{\theequation}{\thesection.\arabic{equation}}
   \@addtoreset{equation}{section}
+
+  % Add chapter num. to sourcecode num.
+  % NOTE Don't remove \AtBeginDocument
+  \AtBeginDocument{
+    \renewcommand*{\thelstlisting}{\thesection.\arabic{lstlisting}}
+    \@addtoreset{lstlisting}{section}
+  }
 \makeatother
 
 % Add text like "図", "表" before \ref
@@ -71,6 +79,7 @@
 \newcommand\figref[1]{図\ref{#1}}
 \newcommand\tabref[1]{表\ref{#1}}
 \renewcommand\eqref[1]{式(\ref{#1})}
+\newcommand\scref[1]{ソースコード(\ref{#1})}
 
 % Change column height
 \renewcommand{\arraystretch}{1.175}
@@ -83,6 +92,34 @@
 \newcolumntype{R}{>{\raggedright\arraybackslash}X}
 \newcolumntype{L}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+%for listings
+\lstset{
+  basicstyle={\small\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  numberstyle={\scriptsize},
+  columns=[l]{fullflexible},
+  frame={tb},                       % フレーム形式
+  framesep=1\zw,                    % フレームまでの余白
+  tabsize={4},                      % タブサイズ
+  breaklines=true,                  % 自動改行
+  xrightmargin=0\zw,                % 右余白
+  xleftmargin=2\zw,                 % 左余白
+  framexleftmargin=1\zw,            % 左フレーム余白
+  framexrightmargin=0\zw,           % 右フレーム余白
+  lineskip=-0.5ex,                  % 行送り
+  belowskip=2\zh,                   % 下余白
+  abovecaptionskip=.5\zh,           % キャプションまでの余白
+  aboveskip=1.5\zh,                 % 上余白
+  numbers=left,                     % 行番号付与
+  stepnumber=1,                     % 行番号間隔
+  numbersep=1\zw,                   % 行番号と本文の間隔
+}
+\def\lstlistingname{ソースコード}
 
 %---------------------------------------------------------------------------------------------------
 % Others                                                                                           |
