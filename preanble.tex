@@ -1,0 +1,75 @@
+%---------------------------------------------------------------------------------------------------
+% preanble.tex                                                                                     |
+% Written by junk-e <junk05301996@gmail.com>                                                       |
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+% Packages                                                                                         |
+%---------------------------------------------------------------------------------------------------
+
+\usepackage[match,no-math]{luatexja-fontspec}
+\usepackage[deluxe,noto-otf]{luatexja-preset}
+\usepackage[]{amsmath,amssymb}
+\usepackage[]{float}
+\usepackage[]{graphicx}
+\usepackage[]{url}
+
+%---------------------------------------------------------------------------------------------------
+% Margin                                                                                           |
+%  - Top:25mm, Right:25mm, Bottom:30mm, Left:25mm                                                  |
+%---------------------------------------------------------------------------------------------------
+
+%-------------------
+% Vertical Setting |
+%-------------------
+
+\setlength{\textheight}{\paperheight}
+\addtolength{\topmargin}{-0.4truemm}        % 1inch(25.4mm) - 0.4mm = 25mm
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+\addtolength{\textheight}{-55truemm}        % textheight - 55(Top+Bottom)
+
+%---------------------
+% Horizontal Setting |
+%---------------------
+
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\oddsidemargin}{-0.4truemm}    % 1inch(25.4mm) - 0.4mm = 25mm
+\addtolength{\evensidemargin}{-0.4truemm}   % 1inch(25.4mm) - 0.4mm = 25mm
+\addtolength{\textwidth}{-50truemm}         % textwidth - 50(Right+Left)
+
+%---------------------------------------------------------------------------------------------------
+% Figure, Table, Equation                                                                          |
+%---------------------------------------------------------------------------------------------------
+
+\makeatletter
+  % Add chapter num. to figure num.
+  \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+  \@addtoreset{figure}{section}
+  
+  % Add chapter num. to table num.
+  \renewcommand{\thetable}{\thesection.\arabic{table}}
+  \@addtoreset{table}{section}
+  
+  % Add chapter num. to equation num.
+  \renewcommand{\theequation}{\thesection.\arabic{equation}}
+  \@addtoreset{equation}{section}
+\makeatother
+
+% Add text like "図", "表" before \ref
+% NOTE \eqref is overwrite amsmath's \eqref
+\newcommand\figref[1]{図\ref{#1}}
+\newcommand\tabref[1]{表\ref{#1}}
+\renewcommand\eqref[1]{式(\ref{#1})}
+
+% Change column height
+\renewcommand{\arraystretch}{1.175}
+
+% Define \Hline which is bold \hline
+\newcommand{\Hline}{\noalign{\hrule height 1.5pt}}
+
+%---------------------------------------------------------------------------------------------------
+% Others                                                                                           |
+%---------------------------------------------------------------------------------------------------
+
+% Change footnote num.
+\renewcommand\thefootnote{\arabic{footnote}}
