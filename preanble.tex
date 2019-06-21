@@ -9,6 +9,7 @@
 \usepackage[match,no-math]{luatexja-fontspec}
 \usepackage[deluxe,noto-otf]{luatexja-preset}
 \usepackage[]{amsmath,amssymb}
+\usepackage[]{fancyhdr}
 \usepackage[]{float}
 \usepackage[]{graphicx}
 \usepackage[]{url}
@@ -70,6 +71,14 @@
 %---------------------------------------------------------------------------------------------------
 % Others                                                                                           |
 %---------------------------------------------------------------------------------------------------
+
+% Header / Footer
+\pagestyle{fancy}
+\fancyhead[L,C,R]{}
+\fancyfoot[L,R]{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}          % head line
+\renewcommand{\footrulewidth}{0pt}          % foot line
 
 % Change footnote num.
 \renewcommand\thefootnote{\arabic{footnote}}
