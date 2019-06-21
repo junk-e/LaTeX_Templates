@@ -15,6 +15,15 @@
 \usepackage[]{tabularx}
 \usepackage[]{url}
 
+\makeatletter
+  \let\MYcaption\@makecaption
+\makeatother
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
+\makeatletter
+  \let\@makecaption\MYcaption
+\makeatother
+
 %---------------------------------------------------------------------------------------------------
 % Margin                                                                                           |
 %  - Top:25mm, Right:25mm, Bottom:30mm, Left:25mm                                                  |
