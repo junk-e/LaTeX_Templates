@@ -12,6 +12,8 @@ if [ ! -f $SCRIPT_DIR/main.tex ]; then
   mv $SCRIPT_DIR/reports/main* $SCRIPT_DIR
   mv $SCRIPT_DIR/reports/sections/* $SCRIPT_DIR/sections/
   rm -rf $SCRIPT_DIR/reports
+  git add .
+  git commit -m '[UPDATE] Deploy templates for reports'
   echo "Initialization was completed"
 else 
   echo "Initialization was already completed"
