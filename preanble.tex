@@ -31,26 +31,32 @@
 %---------------------------------------------------------------------------------------------------
 % Margin                                                                                           |
 %  - Top:25mm, Right:25mm, Bottom:30mm, Left:25mm                                                  |
+%  - textheight: 242mm(685.9838pt)                                                                 |
+%  - textwidth:  160mm(453.543pt)                                                                  |
+%  - define 1pt = 0.3527780mm                                                                      |
+%  - define 1mm = 2.8346439pt                                                                      |
+%  - define 1inch = 25.4mm                                                                         |
+%                 = 71.999955pt                                                                    |
 %---------------------------------------------------------------------------------------------------
 
 %-------------------
 % Vertical Setting |
 %-------------------
 
-\setlength{\textheight}{\paperheight}
-\addtolength{\topmargin}{-0.4truemm}        % 1inch(25.4mm) - 0.4mm = 25mm
-\addtolength{\topmargin}{-\headheight}
-\addtolength{\topmargin}{-\headsep}
-\addtolength{\textheight}{-55truemm}        % textheight - 55(Top+Bottom)
+\setlength{\paperheight}{841.8892truept}                            % 297mm = 841.8892pt
+\setlength{\textheight}{685.9838truept}                             % 242mm = 685.9838pt
+\addtolength{\topmargin}{-2.0393truept}                             % 1inch+topmargin-top(25mm)
+\addtolength{\topmargin}{-\headheight}                              % topmargin including headheight
+\addtolength{\topmargin}{-\headsep}                                 % topmargin including headsep
 
 %---------------------
 % Horizontal Setting |
 %---------------------
 
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\oddsidemargin}{-0.4truemm}    % 1inch(25.4mm) - 0.4mm = 25mm
-\addtolength{\evensidemargin}{-0.4truemm}   % 1inch(25.4mm) - 0.4mm = 25mm
-\addtolength{\textwidth}{-50truemm}         % textwidth - 50(Right+Left)
+\setlength{\paperwidth}{595.2752truept}                             % 210mm = 595.2752pt
+\setlength{\textwidth}{453.5430truept}                              % 160mm = 453.5430pt
+\addtolength{\oddsidemargin}{-4.854truept}                          % 1inch+sidemargin-side(25mm)
+\addtolength{\evensidemargin}{-4.854truept}                         % 1inch+sidemargin-side(25mm)
 
 %---------------------------------------------------------------------------------------------------
 % Figure, Table, Equation, Listings                                                                |
