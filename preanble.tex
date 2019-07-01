@@ -85,10 +85,10 @@
 
 % Add text like "図", "表" before \ref
 % NOTE \eqref is overwrite amsmath's \eqref
-\newcommand\figref[1]{図\ref{#1}}
-\newcommand\tabref[1]{表\ref{#1}}
-\renewcommand\eqref[1]{式(\ref{#1})}
-\newcommand\scref[1]{ソースコード(\ref{#1})}
+\newcommand\figref[1]{図~\ref{fig:#1}}
+\newcommand\tabref[1]{表~\ref{tab:#1}}
+\renewcommand\eqref[1]{式~(\ref{eq:#1})}
+\newcommand\scref[1]{ソースコード~(\ref{sc:#1})}
 
 % Change column height
 \renewcommand{\arraystretch}{1.175}
