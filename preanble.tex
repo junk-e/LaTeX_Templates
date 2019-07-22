@@ -63,26 +63,23 @@
 %---------------------------------------------------------------------------------------------------
 
 \makeatletter
-  % Add chapter num. to figure num.
+  % Caption settings with chapter number
   \renewcommand{\thefigure}{\thesection.\arabic{figure}}
   \@addtoreset{figure}{section}
   
-  % Add chapter num. to table num.
   \renewcommand{\thetable}{\thesection.\arabic{table}}
   \@addtoreset{table}{section}
   
-  % Add chapter num. to equation num.
   \renewcommand{\theequation}{\thesection.\arabic{equation}}
   \@addtoreset{equation}{section}
 
-  % Add chapter num. to sourcecode num.
   % NOTE Don't remove \AtBeginDocument
   \AtBeginDocument{
     \renewcommand*{\thelstlisting}{\thesection.\arabic{lstlisting}}
     \@addtoreset{lstlisting}{section}
   }
 
-  % If you don't need chapter num., please comment out the following
+  % Caption settings without chapter number
   %\renewcommand{\thefigure}{\arabic{figure}}
   %\@addtoreset{figure}{section}
 
