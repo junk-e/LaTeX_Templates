@@ -157,6 +157,30 @@
 \def\lstlistingname{ソースコード}
 
 %---------------------------------------------------------------------------------------------------
+% Title                                                                                            |
+%---------------------------------------------------------------------------------------------------
+\makeatletter
+  \newcommand{\authornum}[1]{#1}
+  \renewcommand{\maketitle}{
+    \vspace*{120pt}
+    \begin{center}
+      {\huge\sf \textgt{\@title}}
+    \end{center}
+    \vspace*{300pt}
+    \begin{center}
+      \Large\sf
+      \begin{tabular}{rl}
+        提出日:   & \textgt{\@date} \\[+8pt]
+        学籍番号: & \textgt{\@authornum} \\[+8pt]
+        氏名:     & \textgt{\@author} \\
+      \end{tabular}
+    \end{center}
+    \thispagestyle{empty}
+    \newpage
+  }
+\makeatother
+
+%---------------------------------------------------------------------------------------------------
 % Others                                                                                           |
 %---------------------------------------------------------------------------------------------------
 
